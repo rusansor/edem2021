@@ -1,27 +1,27 @@
 # Kafka Streams Lab,
 
-## Objectives
+## Objetivos
 
- 1) Run Zookeeper + Kafka
- 2) Produce messages  
- 3) Process messages with Kafka Streams DSL
- 4) Output results
+ 1) Ejecutar Zookeeper + Kafka
+ 2) Producir messages  
+ 3) Procesar mensajes con Kafka Streams DSL
+ 4) Salida de Resultados 
 
-### Requirements
+### Requisitos
 
- * Docker for Windows
+ * Docker para Windows, Mac o Linux
  * Docker Compose 
 
 ## Run
-Simple scenario: 1 zookeeper + 1 Kafka broker.
+Escenario simple: 1 zookeeper + 1 Kafka broker.
 
-Start the ZooKeeper and Kafka container.
+Inicie el contenedor ZooKeeper y Kafka.
 
 ```sh
 $ docker-compose up -d
 ```
 
-Status: 
+Estado: 
 
 ```sh
 $ docker-compose ps
@@ -31,21 +31,21 @@ lab1_kafka_1       /etc/confluent/docker/run   Up      0.0.0.0:9092->9092/tcp
 lab1_zookeeper_1   /etc/confluent/docker/run   Up      0.0.0.0:2181->2181/tcp, 2888/tcp, 3888/tcp
 ```
  
-### Example Description
+### Descripción del ejemplo
 
-The example is a Maven project. You can import the project as Maven project with your IDE. 
+El ejemplo es un proyecto de Maven. Opcional: Como ejercicio avanzado puede importar el proyecto como proyecto Maven con su IDE.
 
-* **Shakespeare Quotes Producer**: The producer will generate 1000 Shakespeare quotes messages, using the [Faker API](https://github.com/DiUS/java-faker), and send them to the `quotes-input`. 
+* **Productor de frases de Shakespeare**: El productor generará 1000 mensajes de citas de Shakespeare, utilizando el [Faker API](https://github.com/DiUS/java-faker), and send them to the `quotes-input`. 
 
- Quote Examples: 
+ Ejemplos de frases: 
   * `True is it that we have seen better days.`
   * `Can one desire too much of a good thing?.`
 
-* **Word Count**: The WordCount, using the high-level [KStream DSL](https://docs.confluent.io/current/streams/developer-guide/dsl-api.html), will compute a simple word occurrence histogram from input quotes. In this example, the input stream reads from a topic named "quotes-input", where the values of messages represent lines of text; and the histogram output is written to topic "streams-wordcount-output", where each record is an updated count of a single word
+* **Word Count**: WordCount, usa la API Kakfa de alto nivel [KStream DSL](https://docs.confluent.io/current/streams/developer-guide/dsl-api.html), will compute a simple word occurrence histogram from input quotes. In this example, the input stream reads from a topic named "quotes-input", where the values of messages represent lines of text; and the histogram output is written to topic "streams-wordcount-output", where each record is an updated count of a single word
 
-* **Results Consumer**: The Consumer will output the "streams-wordcount-output" topic messages.
+* **Resultados del Consumidor**: El consumidor mostrará los mensajes del topic "streams-wordcount-output".
 
-Example: 
+Ejemplo: 
 
 ```sh
      | think | 625
@@ -54,21 +54,21 @@ Example:
      | wise | 1249
 ```
 
-### Running
+### Ejecutando
 
 ```sh
 $ cd kafka-streams-example 
 ```
 
-Compile: 
+Compilar código Java: 
 
 ```sh
 $ mvn clean compile
 ```
 
-###  Producer
+###  Productor
 
-Execute the Producer:
+Ejecute el productor:
 
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
@@ -76,7 +76,7 @@ $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
 
 ###  WordCount
 
-Execute the processor:
+Ejecute el procesador:
 
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.WordcountConsumer"
@@ -84,26 +84,22 @@ $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.WordcountConsumer"
 
 ###  Consumer
 
-Execute the Consumer:
+Ejecute el Consumidor:
 
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Consumer"
 ```
  
+#### Ejercicios avanzados  
 
-#### Exercises  
+* Filtrar palabras - Ejemplo: contar solo palabras con una longitud> 3
 
-* Filter words - Example: Count only words with length > 3
+* Filtrar resultados - Ejemplo: recuento> 10000
 
-* Filter results - Example: Count > 10000
-
- 
-
- 
 
 ### Clean up
 
-Shut down Docker Compose
+Apagar Docker Compose
 
 ```sh
 $ docker-compose down

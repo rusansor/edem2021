@@ -1,26 +1,27 @@
 # Kafka - Lab 1 
 
-## Objectives
+## Objetivos
 
- 1) Run Zookeeper + Kafka
- 2) Produce messages from the command line
- 3) Produce messages from Java.
+ 1) Ejecutar Zookeeper + Kafka
+ 2) Producir y leer mensajes desde la línea de comando
+ 3) Producir y leer mensajes desde Java
+ 4) Producir y leer mensajes desde línea de comando y/o Java
 
-### Requirements
+### Requisitos
 
- * Docker for Windows
+ * Docker para Windows, Mac o Linux
  * Docker Compose 
 
 ## Run
-Simple scenario: 1 zookeeper + 1 Kafka broker.
+Escenario simple: 1 zookeeper + 1 Kafka broker.
 
-Start the ZooKeeper and Kafka container.
+Inicie el contenedor ZooKeeper y Kafka.
 
 ```sh
 $ docker-compose up -d
 ```
 
-Status: 
+Estado: 
 
 ```sh
 $ docker-compose ps
@@ -30,9 +31,9 @@ lab1_kafka_1       /etc/confluent/docker/run   Up      0.0.0.0:9092->9092/tcp
 lab1_zookeeper_1   /etc/confluent/docker/run   Up      0.0.0.0:2181->2181/tcp, 2888/tcp, 3888/tcp
 ```
 
-### Command Line Producer
+### Productor Kafka de linea de comando
 
-Run the command line producer:
+Ejecutar el productor de línea de comandos:
 
 ```sh
 $ docker-compose exec kafka kafka-console-producer --topic myTopic --broker-list localhost:9092
@@ -42,7 +43,7 @@ $ docker-compose exec kafka kafka-console-producer --topic myTopic --broker-list
 
 ```
 
-Read topic content:
+Leer el contenido del topic:
 
 ```sh
 $ docker-compose exec kafka kafka-console-consumer --topic myTopic --from-beginning --bootstrap-server localhost:9092
@@ -50,54 +51,51 @@ hi
 dlp
 ```
 
-### Java Example
+### Ejemplo de Java
 
-The example is a Maven project. You can import the project as Maven project with your IDE. 
+El ejemplo es un proyecto de Maven. Opcional: Como ejercicio avanzado puede importar el proyecto como proyecto Maven con su IDE (IntelliJ IDE o Eclipse).
 
-* Producer: The producer will generate 100 messages and send them to the `myTopic`. 
-* Consumer: Consume and log messages from `myTopic`.  
+* Productor: El productor generará 100 mensajes y los enviará a `myTopic`. 
+* Consumidor: consumir y registrar mensajes de `myTopic`.  
 
 ```sh
 $ cd kafka-example 
 ```
 
-Compile: 
+Compilar projecto/código Java: 
 
 ```sh
 $ mvn clean compile
 ```
 
-###  Consumer
+###  Consumidor Java
 
-Execute the Consumer:
+Ejecutar el consumidor
 
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Consumer"
 ```
-The consumer will listen and log new messages. 
+El consumidor escuchará y registrará nuevos mensajes.
 
-#### Exercises 
+#### Ejercicios 
 
-* How can the consumer list on start all the messagges from the topic?  Tip: *auto.offset.reset*
-* Use different message type. (JSON or Binary)  
-* Disable auto commit feature and implement manual commits.  
+* ¿Cómo puede la lista de consumidores iniciar todos los mensajes del tema?  Pista: *auto.offset.reset*
+ 
+###  Productor
 
-###  Producer
-
-Execute the Producer:
+Ejecuta el productor
 
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
 ``` 
 
-#### Exercises 
+#### Ejercicios 
 
-* Get and log the send() callback. 
-* Write a Sync producer.  
+Pruebe otras combinaciones: produzca mensajes desde la consola y consumalos desde Java o viceversa. 
 
 ### Clean up
 
-Shut down Docker Compose
+Apagar Docker Compose
 
 ```sh
 $ docker-compose down

@@ -1,18 +1,17 @@
 # KSQL Lab
 
-## Objectives
+## Objetivos
 
  
+### Requisitos
 
-### Requirements
-
- * Docker for Windows
+ * Docker para Windows, Mac o Linux
  * Docker Compose 
 
 ## Run
-Simple scenario: 1 zookeeper + 1 Kafka broker.
+Escenario simple: 1 zookeeper + 1 Kafka broker.
 
-Start the ZooKeeper and Kafka container.
+Inicie el contenedor ZooKeeper y Kafka.
 
 ```sh
 $ docker-compose up -d
@@ -90,7 +89,6 @@ ksql> SELECT customerId,
 | 3                            | 788                                                |
 | 1                            | 367                                                |
  
- ksql> DROP STREAM ORDERS_STREAM;
 
  Message
 ----------------------------------------------------------
@@ -129,21 +127,13 @@ ksql> select * from orders_by_customer emit changes;
 
 ^CQuery terminated
 
-### Example Description
 
- 
 
-#### Exercises  
 
- 
-
- 
-
- 
 
 ### Clean up
 
-Shut down Docker Compose
+Apague Docker Compose
 
 ```sh
 $ docker-compose down

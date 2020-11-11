@@ -79,12 +79,11 @@ Ejecutar el consumidor
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Consumer"
 ```
+(En Windowds use doble comillado de esta forma => -D"exec.mainClass")
+
 El consumidor escuchará y registrará nuevos mensajes.
 
-#### Ejercicios 
 
-* ¿Cómo puede la lista de consumidores iniciar todos los mensajes del tema?  Pista: *auto.offset.reset*
- 
 ###  Productor
 
 Ejecuta el productor
@@ -92,6 +91,7 @@ Ejecuta el productor
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
 ``` 
+(En Windowds use doble comillado de esta forma => -D"exec.mainClass")
 
 #### Ejercicios 
 

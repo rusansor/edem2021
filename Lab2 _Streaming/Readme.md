@@ -66,22 +66,6 @@ Compilar código Java:
 $ mvn clean compile
 ```
 
-###  Productor
-
-Ejecute el productor:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
-``` 
-
-###  WordCount
-
-Ejecute el procesador:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.WordcountConsumer"
-``` 
-
 ###  Consumer
 
 Ejecute el Consumidor:
@@ -89,7 +73,28 @@ Ejecute el Consumidor:
 ```sh
 $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Consumer"
 ```
+(En Windowds use doble comillado de esta forma => -D"exec.mainClass")
  
+ ###  WordCount
+ 
+ Ejecute el procesador: 
+ 
+ ```sh
+ $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.WordCountConsumer"
+ ``` 
+ (En Windowds use doble comillado de esta forma => -D"exec.mainClass")
+
+
+###  Productor
+
+Ejecute el productor:
+
+```sh
+$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
+``` 
+(En Windowds use doble comillado de esta forma => -D"exec.mainClass")
+
+
 #### Ejercicios avanzados  
 
 * Filtrar palabras - Ejemplo: contar solo palabras con una longitud> 3

@@ -34,8 +34,13 @@ lab0_zookeeper_1   /etc/confluent/docker/run   Up      0.0.0.0:2181->2181/tcp, 2
 
 Consulte los logs de ZooKeeper para verificar que ZooKeeper esté en buen estado.
 
+Para Mac/Linux
 ```sh
 $ docker-compose logs zookeeper | grep -i binding
+```
+Para Windows PowerShell
+```sh
+$ docker-compose logs zookeeper | Select-String binding
 ```
 
 Ejemplo de salida: 
@@ -48,8 +53,13 @@ zookeeper    | [2020-02-18 15:49:28,229] INFO binding to port 0.0.0.0/0.0.0.0:21
 
 Consulte los logs de Kafka para verificar que el corredor esté en buen estado.
 
+Para Mac/Linux
 ```sh
 $ docker-compose logs kafka | grep -i started
+```
+Para Windows PowerShell
+```sh
+$ docker-compose logs kafka | Select-String started
 ```
 
 Ejemplo de salida: 

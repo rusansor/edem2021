@@ -11,6 +11,10 @@
 
  * Docker para Windows, Mac o Linux
  * Docker Compose 
+ * Oracle JDK (para compilar Java) https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+ * Maven (para compilar Java) https://ftp.cixug.es/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip 
+ *     Instrucciones instalación: https://maven.apache.org/install.html
+ 
 
 ## Run
 Escenario simple: 1 zookeeper + 1 Kafka broker.

@@ -95,6 +95,10 @@ $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
 (En Windowds use doble comillado de esta forma => -D"exec.mainClass")
 
 
+### Producir mensajes con la Consola
+```sh
+$ docker-compose exec kafka kafka-console-producer --topic quotes-input --broker-list localhost:9092
+```
 #### Ejercicios avanzados  
 
 * Filtrar palabras - Ejemplo: contar solo palabras con una longitud> 3

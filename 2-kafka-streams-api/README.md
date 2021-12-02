@@ -56,39 +56,11 @@ Example of the outpout printed by the final Consumer Step3Consumer.java:
 
 ### Running
 
-```sh
-$ cd kafka-streams-example 
-```
+Execute the com.gft.dlp.kafka.Step1Producer
 
-Compile: 
+Run com.gft.dlp.kafka.Step2WordcountConsumer
 
-```sh
-$ mvn clean compile
-```
-
-###  Producer
-
-Execute the Producer:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Step1Producer"
-``` 
-
-###  WordCount
-
-Execute the processor:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Step2WordcountConsumer"
-``` 
-
-###  Consumer
-
-Execute the Consumer:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Step3Consumer"
-```
+Run com.gft.dlp.kafka.Step3Consumer
  
 
 #### Extra Exercises
@@ -98,8 +70,6 @@ $ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Step3Consumer"
 * Filter results - Example: Count > 10000
 
 * Hint: Modify code at com.gft.dlp.kafka.Step2WordCountProcessor.java after "wordCounts.toStream()."
-
- 
 
  
 

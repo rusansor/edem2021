@@ -4,7 +4,7 @@
 # Apache Kafka
 
 ## Development Environment Installation
-Dear student, to maximize the productivity of the Kafka Training sessions be request you to install **prior** the sessions the necessary tools in your local environment (pc or laptop). In case of technical issues the teacher will try to assist you during these sessions. Thank you.
+Dear student, to maximize the productivity of the Kafka Training sessions we request you to install **prior** the sessions the necessary tools in your local environment (pc or laptop). In case of technical issues the teacher will try to assist you during these sessions. Thank you.
 
 ### Java 17 JDK
 * Install the Java Development Kit with version 17 [JDK 17]. Choose a link depending on your pc or laptop operative system:

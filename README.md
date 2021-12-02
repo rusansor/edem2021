@@ -30,7 +30,7 @@ Dear student, to maximize the productivity of the Kafka Training sessions be req
 ### Get source code exercises
 
 You can just directly download the zip file and unzip it: https://github.com/rusansor/edem2021/archive/refs/heads/main.zip
-Or you can use the git command in your Windows, Mac or Linux console: 
+Or you can use the git command in your Windows, Mac or Linux console: https://github.com/rusansor/edem2021.git
 
 
 ## Ensure Kafka runs OK in your local environment

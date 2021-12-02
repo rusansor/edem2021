@@ -29,7 +29,7 @@ Dear student, to maximize the productivity of the Kafka Training sessions be req
 
 
 ## Ensure Kafka runs OK in your local environment
-* Follow/execute this [Kafka steps](https://github.com/rusansor/edem2021/tree/main/1-Kakfa-Producer-Consumer-API/Exercises/Class) to validate that your Kafka is up and running OK. At this moment you do not need to understand the steps, they will be covered in theory&practice during the training sessions.
+* Follow/execute this [Kafka steps](https://github.com/rusansor/edem2021/tree/main/1-Kakfa-Producer-Consumer-API/Exercises/Class), just until the second console command "docker-compose ps", to validate that your Kafka is up and running OK. At this moment you do not need to understand the steps, they will be covered in theory&practice during the training sessions.
 
 
 Thank you :) for having tried to follow above steps!!!!

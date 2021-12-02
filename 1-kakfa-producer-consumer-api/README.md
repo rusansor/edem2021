@@ -63,36 +63,10 @@ The example is a Maven project. You can import the project as Maven project with
 * Producer: The producer will generate 100 messages and send them to the `myTopic`. 
 * Consumer: Consume and log messages from `myTopic`.  
 
-```sh
-$ cd kafka-example 
-```
+### Run the Java application
+Execute the Consumer: "com.gft.dlp.kafka.Consumer"
+Execute the Producer:"com.gft.dlp.kafka.Producer"
 
-Compile: 
-
-```sh
-$ mvn clean compile
-```
-
-###  Consumer
-
-Execute the Consumer:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Consumer"
-```
-The consumer will listen and log new messages. 
-
-#### Exercises 
-
-* How can the consumer list on start all the messagges from the topic?  Tip: *auto.offset.reset*
-
-###  Producer
-
-Execute the Producer:
-
-```sh
-$ mvn exec:java -Dexec.mainClass="com.gft.dlp.kafka.Producer"
-``` 
 
 #### Exercises 
 
